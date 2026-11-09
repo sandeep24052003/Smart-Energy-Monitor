@@ -71,7 +71,7 @@ Completed the core features of the Smart Energy Monitor project, including:
 
 Further enhancements may be added in the future.
 
-Important Note
+## Important Note
 
 This is a software simulation. It does not measure actual electrical quantities or connect to physical hardware.
 
