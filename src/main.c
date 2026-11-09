@@ -159,14 +159,14 @@ int main()
         totalEnergy / reportCount);
     }
     printf("\n ========== ENERGY CLASSIFICATION SUMMARY ==========\n");
-    printf("\n Category\t\tReports\t\tPercentage\n");
-    printf(" ---------------------------------------------------\n");
-    printf(" High Energy\t\t%d\t\t%.2f%%\n",highEnergyCount, highEnergyPercentage);
-    printf(" Moderate Energy\t\t%d\t\t%.2f%%\n",moderateEnergyCount, moderateEnergyPercentage);
-    printf(" Low Energy\t\t%d\t\t%.2f%%\n",lowEnergyCount, lowEnergyPercentage);
-    printf(" ---------------------------------------------------\n");
-    printf(" Total\t\t\t%d\t\t100.00%%\n", reportCount);
-    printf(" ===================================================\n");
+    printf("\nCategory             Reports     Percentage\n");
+    printf("--------------------------------------------\n");
+    printf("%-20s %-12d %.2f%%\n","High Energy", highEnergyCount, highEnergyPercentage);
+    printf("%-20s %-12d %.2f%%\n","Moderate Energy", moderateEnergyCount, moderateEnergyPercentage);
+    printf("%-20s %-12d %.2f%%\n","Low Energy", lowEnergyCount, lowEnergyPercentage);
+    printf("--------------------------------------------\n");
+    printf("%-20s %-12d 100.00%%\n", "Total", reportCount);
+    printf("============================================\n");
     printf("\n Total Electricity Bill = Rs. %.2f\n", totalBill);
     fclose(fp);
     return 0;
