@@ -23,6 +23,17 @@ Technologies
 - Concepts: Power, Energy, Electricity Billing, File Handling, Date and Time
 - Tools: GCC Compiler, Git, GitHub, Visual Studio Code
 
+Project Structure
+
+```text
+Smart-Energy-Monitor/
+├── docs/       # Project documentation
+├── include/    # Header files
+├── images/     # Program output screenshots
+├── src/        # C source code
+├── .gitignore  # Files ignored by Git
+└── README.md   # Project documentation
+
 Features
 
 - Calculates electrical power using voltage, current, and power factor.
@@ -55,3 +66,4 @@ This is a software simulation. It does not measure actual electrical quantities 
 ## Project Output
 
 ![Smart Energy Monitor Output](images/energy-monitor-output.png)
+```
