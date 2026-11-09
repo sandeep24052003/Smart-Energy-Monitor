@@ -33,6 +33,7 @@ Smart-Energy-Monitor/
 ├── src/        # C source code
 ├── .gitignore  # Files ignored by Git
 └── README.md   # Project documentation
+```
 
 Features
 
@@ -48,11 +49,12 @@ Features
 - Classifies consumption as Low, Moderate, or High.
 
 How to Run
+
 - Clone this repository.
 - Compile the source code using GCC:
-    gcc src/main.c -o energy
+  gcc src/main.c -o energy
 - Run the program:
-    ./energy
+  ./energy
 - Enter the requested electrical parameters to view the results.
 
 Project Status
@@ -66,4 +68,7 @@ This is a software simulation. It does not measure actual electrical quantities 
 ## Project Output
 
 ![Smart Energy Monitor Output](images/energy-monitor-output.png)
+
+```
+
 ```
