@@ -36,6 +36,14 @@ Features
 - Calculates total, average, highest, and lowest energy consumption.
 - Classifies consumption as Low, Moderate, or High.
 
+How to Run
+- Clone this repository.
+- Compile the source code using GCC:
+    gcc src/main.c -o energy
+- Run the program:
+    ./energy
+- Enter the requested electrical parameters to view the results.
+
 Project Status
 
 Work in Progress.
