@@ -33,7 +33,7 @@ int main()
     	printf(" Invalid current!\n");
 	    return 1;
     }
-    if(pf<0 || pf>1)
+    if(pf<=0 || pf>1)
     {
     	printf(" Invalid power factor!\n");
 	    return 1;
@@ -54,7 +54,7 @@ int main()
     if(power>maxpower)
         printf(" Warning: Abnormal power consumption!\n");
     else
-    printf(" Power consumptionis normal.\n");
+    printf(" Power consumption is normal.\n");
     if(energy<1)
         printf("Low consumption\n");
     else if(energy>=1 && energy<=2)
@@ -85,7 +85,7 @@ int main()
         return 1;
     }
     fprintf(fp, "\n ===== ENERGY REPORT =====\n");
-    fprintf(fp, " Date and Time: %s\n", dateTime);
+    fprintf(fp, " Date and Time: %19s\n", dateTime);
     fprintf(fp, " Power = %.2f W\n",power);
     fprintf(fp, " Energy = %.2f kwh\n",energy);
     fprintf(fp, " Bill in rupees = %.2f rupees\n",bill);
