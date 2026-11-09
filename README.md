@@ -1,12 +1,12 @@
 Smart Energy Usage \& Energy Monitoring Simulator
 
-About the Project
+## About the Project
 
 A C-based application that simulates an electrical energy monitoring system. It accepts voltage, current, power factor, usage time, and electricity tariff as inputs to calculate power consumption, energy usage, and estimated electricity bills.
 
 The application also stores reports with date and time and provides daily summaries, including total, average, highest, and lowest energy consumption.
 
-Objectives
+## Objectives
 
 - Calculate electrical power and energy consumption.
 - Simulate voltage and current readings.
@@ -16,14 +16,14 @@ Objectives
 - Calculate daily total, average, highest, and lowest energy consumption.
 - Classify energy consumption as Low, Moderate, or High.
 
-Technologies
+## Technologies
 
 - Programming Language: C
 - Domain: Embedded Systems and Basic Electrical Engineering
 - Concepts: Power, Energy, Electricity Billing, File Handling, Date and Time
 - Tools: GCC Compiler, Git, GitHub, Visual Studio Code
 
-Project Structure
+## Project Structure
 
 ```text
 Smart-Energy-Monitor/
@@ -35,7 +35,7 @@ Smart-Energy-Monitor/
 └── README.md   # Project documentation
 ```
 
-Features
+## Features
 
 - Calculates electrical power using voltage, current, and power factor.
 - Calculates energy consumption in kWh.
@@ -48,7 +48,7 @@ Features
 - Calculates total, average, highest, and lowest energy consumption.
 - Classifies consumption as Low, Moderate, or High.
 
-How to Run
+## How to Run
 
 - Clone this repository.
 - Compile the source code using GCC:
@@ -57,9 +57,19 @@ How to Run
   ./energy
 - Enter the requested electrical parameters to view the results.
 
-Project Status
+## Project Status
 
-Work in Progress.
+Completed the core features of the Smart Energy Monitor project, including:
+
+- Electrical power and energy calculations
+- Electricity bill estimation
+- Input validation
+- Date and time-based report generation
+- Daily energy summaries
+- Energy classification
+- Total, average, highest, and lowest energy calculations
+
+Further enhancements may be added in the future.
 
 Important Note
 
