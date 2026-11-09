@@ -51,3 +51,7 @@ Work in Progress.
 Important Note
 
 This is a software simulation. It does not measure actual electrical quantities or connect to physical hardware.
+
+## Project Output
+
+![Smart Energy Monitor Output](images/energy-monitor-output.png)

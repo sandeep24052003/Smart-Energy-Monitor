@@ -13,90 +13,90 @@ int main()
     char savedDate[20];
     char line[200];
     FILE *fp;
-    printf("Enter voltage: ");
+    printf(" Enter voltage: ");
     scanf("%f", &voltage);
-    printf("Enter current: ");
+    printf(" Enter current: ");
     scanf("%f", &current);
-    printf("Enter power factor(0 to 1): ");
+    printf(" Enter power factor(0 to 1): ");
     scanf("%f", &pf);
-    printf("Enter time in hours : ");
+    printf(" Enter time in hours : ");
     scanf("%f",&hours);
-    printf("Enter rate per unit: ");
+    printf(" Enter rate per unit: ");
     scanf("%f", &rate);
     if(voltage<=0)
     {
-    	printf("Invalid voltage!\n");
+    	printf(" Invalid voltage!\n");
 	    return 1;
     }
     if(current<=0)
     {
-    	printf("Invalid current!\n");
+    	printf(" Invalid current!\n");
 	    return 1;
     }
     if(pf<0 || pf>1)
     {
-    	printf("Invalid power factor!\n");
+    	printf(" Invalid power factor!\n");
 	    return 1;
     }
     if(hours<=0)
     {
-    	printf("Invalid time in hours!\n");
+    	printf(" Invalid time in hours!\n");
 	    return 1;
     }
     if(rate<=0)
     {
-    	printf("Invalid rate!\n");
+    	printf(" Invalid rate!\n");
 	    return 1;
     }
     power = voltage * current * pf;
     energy = (power*hours)/1000;
     bill = energy*rate;
     if(power>maxpower)
-        printf("Warning: Abnormal power consumption!\n");
+        printf(" Warning: Abnormal power consumption!\n");
     else
-    printf("Power consumptionis normal.\n");
+    printf(" Power consumptionis normal.\n");
     if(energy<1)
         printf("Low consumption\n");
     else if(energy>=1 && energy<=2)
-        printf("Moderate consumption\n");
+        printf(" Moderate consumption\n");
     else
-        printf("High consumption\n");
+        printf(" High consumption\n");
     currentTime=time(NULL);
     localTime=localtime(&currentTime);
     if(localTime==NULL)
     {
-        printf("Unable to get localtime!");
+        printf(" Unable to get localtime!");
         return 1;
     }
     strftime(dateTime, sizeof(dateTime),"%d-%m-%y %H:%M:%S",localTime);
     strftime(todayDate,sizeof(todayDate),"%d-%m-%y",localTime);
-    printf("Today's date:[%s]\n",todayDate);
+    printf(" Today's date:[%s]\n",todayDate);
     strcpy(todayDate,dateTime);
     todayDate[8]='\0';
-    printf("Date and Time: %s\n", dateTime);
-    printf("\n===== ENERGY REPORT =====\n");
-    printf("Power = %.2f W\n", power);
-    printf("Energy = %.2f kwh\n",energy);
-    printf("Bill in rupees = %.2f rupees\n",bill);
+    printf(" Date and Time: %s\n", dateTime);
+    printf("\n ===== ENERGY REPORT =====\n");
+    printf(" Power = %.2f W\n", power);
+    printf(" Energy = %.2f kwh\n",energy);
+    printf(" Bill in rupees = %.2f rupees\n",bill);
     fp=fopen("energy_report.txt","a");
     if(fp==NULL)
     {
-        printf("Error opening file!\n");
+        printf(" Error opening file!\n");
         return 1;
     }
-    fprintf(fp, "\n===== ENERGY REPORT =====\n");
-    fprintf(fp, "Date and Time: %s\n", dateTime);
-    fprintf(fp, "Power = %.2f W\n",power);
-    fprintf(fp, "Energy = %.2f kwh\n",energy);
-    fprintf(fp, "Bill in rupees = %.2f rupees\n",bill);
+    fprintf(fp, "\n ===== ENERGY REPORT =====\n");
+    fprintf(fp, " Date and Time: %s\n", dateTime);
+    fprintf(fp, " Power = %.2f W\n",power);
+    fprintf(fp, " Energy = %.2f kwh\n",energy);
+    fprintf(fp, " Bill in rupees = %.2f rupees\n",bill);
     fclose(fp);
     fp=fopen("energy_report.txt","r");
     if(fp==NULL)
     {
-        printf("Unable to open file for reading!\n");
+        printf(" Unable to open file for reading!\n");
         return 1;
     }
-    printf("\n===== SAVED REPORTS =====\n");
+    printf("\n ===== SAVED REPORTS =====\n");
     while (fgets(line, sizeof(line), fp) != NULL)
     {
         if (strstr(line, "Date and Time:") != NULL)
@@ -149,25 +149,25 @@ int main()
         moderateEnergyPercentage =((float)moderateEnergyCount / reportCount) * 100;
         lowEnergyPercentage =((float)lowEnergyCount / reportCount) * 100;
     }
-    printf("\nTotal Energy Consumption = %.2f kwh\n", totalEnergy);
-    printf("\nHighest Energy Consumption Today = %.2f kwh\n", maxEnergy);
-    printf("\nLowest Energy Consumption Today = %.2f kwh\n", minEnergy);
-    printf("\nTotal Reports Today = %d\n", reportCount);
+    printf("\n Total Energy Consumption = %.2f kwh\n", totalEnergy);
+    printf("\n Highest Energy Consumption Today = %.2f kwh\n", maxEnergy);
+    printf("\n Lowest Energy Consumption Today = %.2f kwh\n", minEnergy);
+    printf("\n Total Reports Today = %d\n", reportCount);
     if (reportCount > 0)
     {
-        printf("Average Energy Consumption Today = %.2f kwh\n",
+        printf(" Average Energy Consumption Today = %.2f kwh\n",
         totalEnergy / reportCount);
     }
-    printf("\n========== ENERGY CLASSIFICATION SUMMARY ==========\n");
-    printf("\nCategory\t\tReports\t\tPercentage\n");
-    printf("---------------------------------------------------\n");
-    printf("High Energy\t\t%d\t\t%.2f%%\n",highEnergyCount, highEnergyPercentage);
-    printf("Moderate Energy\t\t%d\t\t%.2f%%\n",moderateEnergyCount, moderateEnergyPercentage);
-    printf("Low Energy\t\t%d\t\t%.2f%%\n",lowEnergyCount, lowEnergyPercentage);
-    printf("---------------------------------------------------\n");
-    printf("Total\t\t\t%d\t\t100.00%%\n", reportCount);
-    printf("===================================================\n");
-    printf("\nTotal Electricity Bill = Rs. %.2f\n", totalBill);
+    printf("\n ========== ENERGY CLASSIFICATION SUMMARY ==========\n");
+    printf("\n Category\t\tReports\t\tPercentage\n");
+    printf(" ---------------------------------------------------\n");
+    printf(" High Energy\t\t%d\t\t%.2f%%\n",highEnergyCount, highEnergyPercentage);
+    printf(" Moderate Energy\t\t%d\t\t%.2f%%\n",moderateEnergyCount, moderateEnergyPercentage);
+    printf(" Low Energy\t\t%d\t\t%.2f%%\n",lowEnergyCount, lowEnergyPercentage);
+    printf(" ---------------------------------------------------\n");
+    printf(" Total\t\t\t%d\t\t100.00%%\n", reportCount);
+    printf(" ===================================================\n");
+    printf("\n Total Electricity Bill = Rs. %.2f\n", totalBill);
     fclose(fp);
     return 0;
 }
